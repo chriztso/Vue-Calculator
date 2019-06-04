@@ -1,6 +1,5 @@
 <template>
   <div class = "whole">
-    {{result}}
     <div class = "display">
       <span class = "currentNumber">{{currentNumber}}</span>
     </div>
@@ -68,7 +67,7 @@
           <span class = "symbol" v-on:click = 'getText' data-value='.'>.</span>
         </div> 
         <div id = "equal">
-          <span class = "symbol">=</span>
+          <span class = "symbol" v-on:click = 'resolve'>=</span>
         </div>  
     </div>            
 
@@ -129,7 +128,10 @@ export default{
           this.currentNumber = this.result;
         }
         this.result += '-';
-
+      },
+      resolve(){
+        this.result = eval(this.result);
+        this.currentNumber = this.result;
       }
     }
 }
@@ -169,6 +171,7 @@ export default{
     background-color: rgb(71, 70, 71);
     width: 25%;
     text-align: center;
+    border: 1px solid white;
 }
 
 #seven, #eight, #nine, 
@@ -178,18 +181,21 @@ export default{
     background-color: rgb(119, 117, 115);
     width: 25%;
     text-align: center;
+    border: 1px solid white;
 }
 
 #zero{
     background-color: rgb(119, 117, 115);
     width: 50%;
     text-align: center;
+    border: 1px solid white;
 }
 
 #divide, #multiply, #subtract, #add, #equal{
     background-color: rgb(246, 158, 31);
     width: 25%;
     text-align: center;
+    border: 1px solid white;
 }
 
 </style>
