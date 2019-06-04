@@ -16,6 +16,20 @@
         <div id = "divide">
           <span class = "symbol">÷</span>
         </div>    
+    </div>       
+    <div class = "secondRow">
+        <div id = "seven">
+          <span class = "symbol">7</span>
+        </div> 
+         <div id = "eight">
+          <span class = "symbol">8</span>
+        </div> 
+         <div id = "nine">
+          <span class = "symbol">9</span>
+        </div>  
+        <div id = "multiply">
+          <span class = "symbol">x</span>
+        </div>    
     </div>            
 
   </div>
@@ -53,11 +67,10 @@ export default{
     left: 210px;
 }
 
-.firstRow{
+.firstRow, .secondRow{
     display: flex;
     flex-direction: row;
     height: 52px;
-
 }
 
 
@@ -67,19 +80,16 @@ export default{
     top: 30%;
 }
 
-#AC, #plusMinus, #percentage{
+#AC, #plusMinus, #percentage, #seven, #eight, #nine{
     background-color: rgb(71, 70, 71);
     width: 25%;
     text-align: center;
 }
 
-#divide{
+#divide, #multiply{
     background-color: rgb(246, 158, 31);
     width: 25%;
     text-align: center;
 }
-
-
-
 
 </style>
