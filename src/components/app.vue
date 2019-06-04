@@ -3,8 +3,19 @@
     <div class = "display">
       <span class = "currentNumber">{{currentNumber}}</span>
     </div>
-    <div>
-        1
+    <div class = "firstRow">
+        <div id = "AC">
+          <span class = "symbol">AC</span>
+        </div> 
+         <div id = "plusMinus">
+          <span class = "symbol">+/-</span>
+        </div> 
+         <div id = "percentage">
+          <span class = "symbol">%</span>
+        </div>  
+        <div id = "divide">
+          <span class = "symbol">÷</span>
+        </div>    
     </div>            
 
   </div>
@@ -33,7 +44,7 @@ export default{
 .display{
     background-color:rgb(92,91,92);
     color: white;
-    height: 80px;
+    height: 88px;
     font-size: 60px;
 }
 
@@ -41,4 +52,34 @@ export default{
     position: relative;
     left: 210px;
 }
+
+.firstRow{
+    display: flex;
+    flex-direction: row;
+    height: 52px;
+
+}
+
+
+.symbol{
+    color: white;
+    position: relative; 
+    top: 30%;
+}
+
+#AC, #plusMinus, #percentage{
+    background-color: rgb(71, 70, 71);
+    width: 25%;
+    text-align: center;
+}
+
+#divide{
+    background-color: rgb(246, 158, 31);
+    width: 25%;
+    text-align: center;
+}
+
+
+
+
 </style>
