@@ -19,13 +19,13 @@
     </div>       
     <div class = "secondRow">
         <div id = "seven">
-          <span class = "symbol">7</span>
+          <span class = "symbol" v-on:click = 'getText' data-value='7'>7</span>
         </div> 
          <div id = "eight">
-          <span class = "symbol">8</span>
+          <span class = "symbol" v-on:click = 'getText' data-value='8'>8</span>
         </div> 
          <div id = "nine">
-          <span class = "symbol">9</span>
+          <span class = "symbol" v-on:click = 'getText' data-value='9'>9</span>
         </div>  
         <div id = "multiply">
           <span class = "symbol">x</span>
@@ -33,13 +33,13 @@
     </div> 
     <div class = "thirdRow">
         <div id = "four">
-          <span class = "symbol">4</span>
+          <span class = "symbol" v-on:click = 'getText' data-value='4'>4</span>
         </div> 
          <div id = "five">
-          <span class = "symbol">5</span>
+          <span class = "symbol" v-on:click = 'getText' data-value='5'>5</span>
         </div> 
          <div id = "six">
-          <span class = "symbol">6</span>
+          <span class = "symbol" v-on:click = 'getText' data-value='6'>6 </span>
         </div>  
         <div id = "subtract">
           <span class = "symbol">-</span>
@@ -47,13 +47,13 @@
     </div>  
     <div class = "fourthRow">
         <div id = "three">
-          <span class = "symbol">3</span>
+          <span class = "symbol" v-on:click = 'getText' data-value='3'>3</span>
         </div> 
          <div id = "two">
-          <span class = "symbol">2</span>
+          <span class = "symbol" v-on:click = 'getText' data-value='2'>2</span>
         </div> 
          <div id = "one">
-          <span class = "symbol">1</span>
+          <span class = "symbol" v-on:click = 'getText' data-value='1'>1</span>
         </div>  
         <div id = "add">
           <span class = "symbol">+</span>
@@ -61,7 +61,7 @@
     </div>  
     <div class = "lastRow">
         <div id = "zero">
-          <span class = "symbol">0</span>
+          <span class = "symbol" v-on:click = 'getText' data-value='0'>0</span>
         </div> 
          <div id = "period">
           <span class = "symbol">.</span>
@@ -78,8 +78,14 @@
 export default{
     data() {
         return {
-            currentNumber: '0'
+            currentNumber: ''
         }
+    },
+    methods: {
+      getText(event){
+        this.currentNumber += event.target.getAttribute('data-value');
+      }
+
     }
 }
 </script>
@@ -99,11 +105,7 @@ export default{
     color: white;
     height: 88px;
     font-size: 60px;
-}
-
-.currentNumber{
-    position: relative;
-    left: 210px;
+    text-align: right;
 }
 
 .firstRow, .secondRow, .thirdRow, .fourthRow, .lastRow{
