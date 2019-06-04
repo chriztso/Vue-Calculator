@@ -4,7 +4,7 @@
       <span class = "currentNumber">{{currentNumber}}</span>
     </div>
     <div class = "firstRow">
-        <div id = "AC">
+        <div id = "AC" v-on:click = 'clearNumbers'>
           <span class = "symbol">AC</span>
         </div> 
          <div id = "plusMinus">
@@ -84,6 +84,9 @@ export default{
     methods: {
       getText(event){
         this.currentNumber += event.target.getAttribute('data-value');
+      },
+      clearNumbers(){
+        this.currentNumber = '';
       }
 
     }
