@@ -30,6 +30,20 @@
         <div id = "multiply">
           <span class = "symbol">x</span>
         </div>    
+    </div> 
+     <div class = "thirdRow">
+        <div id = "four">
+          <span class = "symbol">4</span>
+        </div> 
+         <div id = "five">
+          <span class = "symbol">5</span>
+        </div> 
+         <div id = "six">
+          <span class = "symbol">6</span>
+        </div>  
+        <div id = "subtract">
+          <span class = "symbol">-</span>
+        </div>    
     </div>            
 
   </div>
@@ -67,7 +81,7 @@ export default{
     left: 210px;
 }
 
-.firstRow, .secondRow{
+.firstRow, .secondRow, .thirdRow{
     display: flex;
     flex-direction: row;
     height: 52px;
@@ -80,13 +94,15 @@ export default{
     top: 30%;
 }
 
-#AC, #plusMinus, #percentage, #seven, #eight, #nine{
+#AC, #plusMinus, #percentage, #seven, #eight, #nine, 
+#four, #five, #six
+{
     background-color: rgb(71, 70, 71);
     width: 25%;
     text-align: center;
 }
 
-#divide, #multiply{
+#divide, #multiply, #subtract{
     background-color: rgb(246, 158, 31);
     width: 25%;
     text-align: center;
