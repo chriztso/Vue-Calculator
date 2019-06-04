@@ -43,7 +43,7 @@
           <span class = "symbol" v-on:click = 'getText' data-value='6'>6 </span>
         </div>  
         <div id = "subtract">
-          <span class = "symbol">-</span>
+          <span class = "symbol" v-on:click = 'subtractNumber'>-</span>
         </div>    
     </div>  
     <div class = "fourthRow">
@@ -86,7 +86,7 @@ export default{
     methods: {
       getText(event){
         if(this.result[this.result.length-1] === '+' || this.result[this.result.length-1] === '/' || 
-        this.result[this.result.length-1] === '*') {
+        this.result[this.result.length-1] === '*' || this.result[this.result.length-1] === '-') {
           this.currentNumber = '';
         }
         this.currentNumber += event.target.getAttribute('data-value');
@@ -122,6 +122,13 @@ export default{
           this.currentNumber = this.result;
         }
         this.result += '*';
+      },
+      subtractNumber(){
+        if(this.result[this.result.length-1] !== '-'){
+          this.result = eval(this.result);
+          this.currentNumber = this.result;
+        }
+        this.result += '-';
 
       }
     }
