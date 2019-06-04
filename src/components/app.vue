@@ -58,6 +58,17 @@
         <div id = "add">
           <span class = "symbol">+</span>
         </div>    
+    </div>  
+    <div class = "lastRow">
+        <div id = "zero">
+          <span class = "symbol">0</span>
+        </div> 
+         <div id = "period">
+          <span class = "symbol">.</span>
+        </div> 
+         <div id = "equal">
+          <span class = "symbol">=</span>
+        </div>  
     </div>            
 
   </div>
@@ -95,7 +106,7 @@ export default{
     left: 210px;
 }
 
-.firstRow, .secondRow, .thirdRow, .fourthRow{
+.firstRow, .secondRow, .thirdRow, .fourthRow, .lastRow{
     display: flex;
     flex-direction: row;
     height: 52px;
@@ -114,14 +125,21 @@ export default{
 }
 
 #seven, #eight, #nine, 
-#four, #five, #six, #three, #two, #one
+#four, #five, #six, #three, #two, #one, 
+#period
 {
     background-color: rgb(119, 117, 115);
     width: 25%;
     text-align: center;
 }
 
-#divide, #multiply, #subtract, #add{
+#zero{
+    background-color: rgb(119, 117, 115);
+    width: 50%;
+    text-align: center;
+}
+
+#divide, #multiply, #subtract, #add, #equal{
     background-color: rgb(246, 158, 31);
     width: 25%;
     text-align: center;
