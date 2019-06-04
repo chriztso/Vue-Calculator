@@ -56,7 +56,7 @@
           <span class = "symbol" v-on:click = 'getText' data-value='1'>1</span>
         </div>  
         <div id = "add">
-          <span class = "symbol">+</span>
+          <span class = "symbol" v-on:click = 'addNumber'>+</span>
         </div>    
     </div>  
     <div class = "lastRow">
@@ -64,7 +64,7 @@
           <span class = "symbol" v-on:click = 'getText' data-value='0'>0</span>
         </div> 
          <div id = "period">
-          <span class = "symbol">.</span>
+          <span class = "symbol" v-on:click = 'getText' data-value='.'>.</span>
         </div> 
          <div id = "equal">
           <span class = "symbol">=</span>
@@ -78,21 +78,34 @@
 export default{
     data() {
         return {
-            currentNumber: ''
+            currentNumber: '', 
+            result : ''
         }
     },
     methods: {
       getText(event){
+        if(this.result[this.result.length-1] === '+'){
+          this.currentNumber = '';
+        }
         this.currentNumber += event.target.getAttribute('data-value');
+        this.result += event.target.getAttribute('data-value');
       },
       clearNumbers(){
         this.currentNumber = '';
+        this.result = '';
       },
       changeSign(){
         this.currentNumber *= -1;
       },
       makePercentage(){
         this.currentNumber /= 100;
+      },
+      addNumber(){
+        if(this.result[this.result.length-1] !== '+'){
+          this.result = eval(this.result);
+          this.currentNumber = this.result;
+        }
+        this.result += '+';
       }
     }
 }
