@@ -8,10 +8,10 @@
           <span class = "symbol">AC</span>
         </div> 
          <div id = "plusMinus">
-          <span class = "symbol">+/-</span>
+          <span class = "symbol" v-on:click = 'changeSign'>+/-</span>
         </div> 
          <div id = "percentage">
-          <span class = "symbol">%</span>
+          <span class = "symbol" v-on:click = 'makePercentage'>%</span>
         </div>  
         <div id = "divide">
           <span class = "symbol">÷</span>
@@ -87,8 +87,13 @@ export default{
       },
       clearNumbers(){
         this.currentNumber = '';
+      },
+      changeSign(){
+        this.currentNumber *= -1;
+      },
+      makePercentage(){
+        this.currentNumber /= 100;
       }
-
     }
 }
 </script>
